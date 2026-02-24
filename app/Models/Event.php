@@ -12,6 +12,14 @@ class Event extends Model
     /** @use HasFactory<\Database\Factories\EventModelFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'date',
+        'location',
+        'created_by'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
