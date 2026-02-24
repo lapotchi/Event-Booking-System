@@ -27,7 +27,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"email\": \"kay.greenholt@example.com\",\n    \"password\": \"password\"\n}",
+              "raw": "{\n    \"email\": \"rbreitenberg@example.org\",\n    \"password\": \"password\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -201,7 +201,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"title\": \"Test Title\",\n    \"description\": \"Sample description\",\n    \"date\": \"1985-03-18\",\n    \"location\": \"Sample location\"\n}",
+              "raw": "{\n    \"title\": \"Test Title\",\n    \"description\": \"Sample description\",\n    \"date\": \"2026-03-18\",\n    \"location\": \"Sample location\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -221,8 +221,34 @@
           "name": "Show",
           "id": "dfec9ce6-d4fa-4135-8b4a-0c5947f81f89",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
-            "header": []
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "90f3a367-ce74-43a0-9668-3ffd20f4ae14"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}events/4",
+              "host": [
+                "{{base_url}}events"
+              ],
+              "path": [
+                "4"
+              ]
+            }
           },
           "response": []
         },
@@ -230,8 +256,49 @@
           "name": "Update",
           "id": "48e06f07-b594-4ace-8534-590731d1c250",
           "request": {
-            "method": "GET",
-            "header": []
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "20c413b5-bdc0-4a83-b85d-4d2125ace89d"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "3187e347-1aa6-4bda-8a43-7d60f2e0346f"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Test Title\",\n    \"description\": \"Sample description\",\n    \"date\": \"2026-03-18\",\n    \"location\": \"Sample location\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}events/4",
+              "host": [
+                "{{base_url}}events"
+              ],
+              "path": [
+                "4"
+              ]
+            }
           },
           "response": []
         },
@@ -239,49 +306,191 @@
           "name": "Destroy",
           "id": "c1b3efc5-988b-46b4-805d-68178d0703aa",
           "request": {
-            "method": "GET",
-            "header": []
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "0f1e3754-a12d-4bcd-9287-ecc102c43346"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}events/4",
+              "host": [
+                "{{base_url}}events"
+              ],
+              "path": [
+                "4"
+              ]
+            }
           },
           "response": []
         }
       ],
       "id": "561c62a3-bb55-4cc1-813b-c439fc56aef0"
-    }
-  ],
-  "event": [
-    {
-      "listen": "prerequest",
-      "script": {
-        "id": "545f8a76-cca2-4ab8-8cd7-8b08569abf91",
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
-      }
     },
     {
-      "listen": "test",
-      "script": {
-        "id": "decca44d-d55f-4b16-bd56-4449ff46f002",
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
-      }
+      "name": "Tickets",
+      "item": [
+        {
+          "name": "Store",
+          "id": "ff7b5fd6-ff6b-459f-b723-cab12533e987",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "18d48d58-375e-4ac3-8301-6d3222c76f03"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "444ac764-c6c0-43c9-99db-f57b3bbff08b"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"VIP\",\n    \"price\": \"4587.31\",\n    \"quantity\": 200,\n    \"name\": \"Ticket Name\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}events/2/tickets",
+              "host": [
+                "{{base_url}}events"
+              ],
+              "path": [
+                "2",
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "id": "f70aa7fa-8c14-4da1-b801-4c3b080295f8",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "1d2873a8-b05e-4519-b2e6-6218bc31ea45"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "50c57e8d-13cd-4aa3-9229-1603ad103037"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"price\": \"4587.31\",\n    \"quantity\": 1000,\n    \"type\": \"VIP\",\n    \"event_id\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}tickets/16",
+              "host": [
+                "{{base_url}}tickets"
+              ],
+              "path": [
+                "16"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Destroy",
+          "id": "e3cbb2f5-a41f-47bf-afb5-e22a7f39e53e",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "13e05c38-75ae-4623-ba1d-896a04f4e87c"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}tickets/16",
+              "host": [
+                "{{base_url}}tickets"
+              ],
+              "path": [
+                "16"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "3093e6c9-a450-4aa7-bd32-3f3aa92009e0"
     }
   ],
   "variable": [
     {
-      "id": "e8e192dc-bd1f-411a-93b2-63a0d2dcb931",
+      "id": "f9288ece-0749-4073-865c-4b3c3afa7b13",
       "key": "base_url",
       "value": ""
     },
     {
-      "id": "13ec713e-b353-467e-8e52-d9adcabf624b",
+      "id": "8573ba42-5cc9-4dfe-b1e7-13a0381a91fb",
       "key": "token",
       "value": ""
     }
