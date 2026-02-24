@@ -524,12 +524,12 @@
               }
             },
             "url": {
-              "raw": "{{base_url}}tickets/14/bookings",
+              "raw": "{{base_url}}tickets/2/bookings",
               "host": [
                 "{{base_url}}tickets"
               ],
               "path": [
-                "14",
+                "2",
                 "bookings"
               ]
             }
@@ -542,12 +542,12 @@
   ],
   "variable": [
     {
-      "id": "bcc2dbd5-3fe1-4772-84cb-683442b1bf90",
+      "id": "0258e7f1-599d-4df8-9a86-86d3c382b53b",
       "key": "base_url",
       "value": ""
     },
     {
-      "id": "62a9ae4b-449d-481f-b564-0cfa0848f180",
+      "id": "85bf048d-14fd-461d-9851-cd41292864c9",
       "key": "token",
       "value": ""
     }
