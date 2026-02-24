@@ -1,0 +1,289 @@
+{
+  "info": {
+    "_postman_id": "deabd7de-b601-4e8c-9587-982c23d63f1d",
+    "name": "Ticketing System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "id": "c97547d9-83be-457d-a3d0-756c796fc463",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"kay.greenholt@example.com\",\n    \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}login",
+              "host": [
+                "{{base_url}}login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "id": "01df9cc1-a9c3-4e9f-806f-82dde16fdc92",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}logout",
+              "host": [
+                "{{base_url}}logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "id": "5cdac0bb-ae6b-4d54-b0ea-2c201a783c9d",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Arthur Gutkowski\",\n    \"email\": \"baylee.brekke@example.net\",\n    \"phone\": \"1-304-912-9754\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}register",
+              "host": [
+                "{{base_url}}register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me",
+          "id": "a4be4f83-4ce8-4e83-b236-2fbffef5f02e",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}me",
+              "host": [
+                "{{base_url}}me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "efa1083c-6a58-42a7-950c-7701265f4ca0"
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "Index",
+          "id": "969ad978-0bd0-4745-b2ed-063967e4a980",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}events",
+              "host": [
+                "{{base_url}}events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store",
+          "id": "dd8b455d-0b0b-494f-bbf0-459e1c9be90d",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Test Title\",\n    \"description\": \"Sample description\",\n    \"date\": \"1985-03-18\",\n    \"location\": \"Sample location\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}events",
+              "host": [
+                "{{base_url}}events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show",
+          "id": "dfec9ce6-d4fa-4135-8b4a-0c5947f81f89",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "id": "48e06f07-b594-4ace-8534-590731d1c250",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Destroy",
+          "id": "c1b3efc5-988b-46b4-805d-68178d0703aa",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ],
+      "id": "561c62a3-bb55-4cc1-813b-c439fc56aef0"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "545f8a76-cca2-4ab8-8cd7-8b08569abf91",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "decca44d-d55f-4b16-bd56-4449ff46f002",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "e8e192dc-bd1f-411a-93b2-63a0d2dcb931",
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "id": "13ec713e-b353-467e-8e52-d9adcabf624b",
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
