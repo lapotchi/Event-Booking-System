@@ -27,7 +27,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"email\": \"rbreitenberg@example.org\",\n    \"password\": \"password\"\n}",
+              "raw": "{\n    \"email\": \"hilton.goldner@example.net\",\n    \"password\": \"password\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -481,16 +481,73 @@
         }
       ],
       "id": "3093e6c9-a450-4aa7-bd32-3f3aa92009e0"
+    },
+    {
+      "name": "Booking",
+      "item": [
+        {
+          "name": "New Request",
+          "id": "11ceb9b5-bcfc-4007-844f-d12d41451a99",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "e3e55558-2166-405d-aadc-e61e54746978"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "uuid": "ad991b69-83a6-4add-8941-87b46bf8635a"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"quantity\": 4\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}tickets/14/bookings",
+              "host": [
+                "{{base_url}}tickets"
+              ],
+              "path": [
+                "14",
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "288d8d05-b72b-43ea-a683-695903dc7e03"
     }
   ],
   "variable": [
     {
-      "id": "f9288ece-0749-4073-865c-4b3c3afa7b13",
+      "id": "bcc2dbd5-3fe1-4772-84cb-683442b1bf90",
       "key": "base_url",
       "value": ""
     },
     {
-      "id": "8573ba42-5cc9-4dfe-b1e7-13a0381a91fb",
+      "id": "62a9ae4b-449d-481f-b564-0cfa0848f180",
       "key": "token",
       "value": ""
     }
